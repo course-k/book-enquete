@@ -106,7 +106,7 @@ function BookTable({
                 <td className="px-4 py-2">{book.publisher}</td>
                 <td className="px-4 py-2">
                   <div className="flex flex-wrap">
-                    {book.description.map((desc, index) => (
+                    {book.description?.map((desc, index) => (
                       <DescriptionTag key={index} description={desc} />
                     ))}
                   </div>
