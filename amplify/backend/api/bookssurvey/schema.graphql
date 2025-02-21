@@ -1,0 +1,23 @@
+# amplify/backend/api/bookssurvey/schema.graphql
+
+type Book @model @auth(rules: [{ allow: public }]) {
+  isbn: ID!
+  title: String!
+  creator: String!
+  publisher: String!
+  description: [String]!
+  language: String!
+  votes: Int
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Vote @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  bookIsbn: String!
+  timestamp: AWSDateTime!
+}
+
+type Query {
+  getBooksByVotes(limit: Int): [Book] @function(name: "getBooksByVotes")
+}
