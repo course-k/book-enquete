@@ -140,21 +140,18 @@ export default function BookSurvey() {
 
       {error && <ErrorAlert message={error} onClose={() => setError(null)} />}
 
-      <SearchForm onSearch={handleSearch} />
+      <div className="space-y-6">
+        <VoteRanking books={books} loading={loading} />
 
-      <div className="grid grid-cols-1 gap-6">
-        <div className="col-span-1">
-          <VoteRanking books={books} loading={loading} />
-        </div>
-        <div className="col-span-1">
-          <BookTable
-            books={filteredBooks}
-            onVote={handleVote}
-            sortConfig={sortConfig}
-            onSort={handleSort}
-            loading={loading}
-          />
-        </div>
+        <SearchForm onSearch={handleSearch} />
+
+        <BookTable
+          books={filteredBooks}
+          onVote={handleVote}
+          sortConfig={sortConfig}
+          onSort={handleSort}
+          loading={loading}
+        />
       </div>
     </div>
   );
