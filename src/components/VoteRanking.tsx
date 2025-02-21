@@ -10,11 +10,11 @@ interface VoteRankingProps {
 function VoteRanking({ books, loading }: VoteRankingProps) {
   const topBooks = [...books]
     .sort((a, b) => (b.votes || 0) - (a.votes || 0))
-    .slice(0, 10);
+    .slice(0, 3);
 
   return (
     <div className="bg-white rounded-lg shadow p-6">
-      <h2 className="text-xl font-bold mb-4">投票数トップ10の本</h2>
+      <h2 className="text-xl font-bold mb-4">投票数トップ3の本</h2>
 
       <LoadingOverlay loading={loading}>
         <div className="space-y-3">

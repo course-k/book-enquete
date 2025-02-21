@@ -143,7 +143,10 @@ export default function BookSurvey() {
       <SearchForm onSearch={handleSearch} />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-1">
+          <VoteRanking books={books} loading={loading} />
+        </div>
+        <div className="lg:col-span-1">
           <BookTable
             books={filteredBooks}
             onVote={handleVote}
@@ -151,9 +154,6 @@ export default function BookSurvey() {
             onSort={handleSort}
             loading={loading}
           />
-        </div>
-        <div>
-          <VoteRanking books={books} loading={loading} />
         </div>
       </div>
     </div>
