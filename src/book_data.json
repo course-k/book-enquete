@@ -1407,18 +1407,6 @@
     "language": "jpn"
   },
   {
-    "isbn": "9784047037342",
-    "errors": [
-      "Error: Request failed with status code 429"
-    ]
-  },
-  {
-    "isbn": "9784047337008",
-    "errors": [
-      "Error: Request failed with status code 429"
-    ]
-  },
-  {
     "isbn": "9784047337589",
     "title": "英雄伝説 界の軌跡 -Farewell, O Zemuria- 公式ビジュアルコレクション",
     "creator": "電撃ゲーム書籍編集部 編集",
@@ -1440,12 +1428,6 @@
       "文芸"
     ],
     "language": "jpn"
-  },
-  {
-    "isbn": "9784047337756",
-    "errors": [
-      "No record data found"
-    ]
   },
   {
     "isbn": "9784047381612",
@@ -1553,18 +1535,6 @@
       "A5"
     ],
     "language": "jpn"
-  },
-  {
-    "isbn": "9784047382923",
-    "errors": [
-      "Error: Request failed with status code 429"
-    ]
-  },
-  {
-    "isbn": "9784047382954",
-    "errors": [
-      "Error: Request failed with status code 429"
-    ]
   },
   {
     "isbn": "9784047382992",
@@ -2219,12 +2189,6 @@
       "46"
     ],
     "language": "jpn"
-  },
-  {
-    "isbn": "9784093891882",
-    "errors": [
-      "Error: Request failed with status code 429"
-    ]
   },
   {
     "isbn": "9784093891950",
@@ -3371,12 +3335,6 @@
     "language": "jpn"
   },
   {
-    "isbn": "9784296120574",
-    "errors": [
-      "No record data found"
-    ]
-  },
-  {
     "isbn": "9784296120895",
     "title": "サーキュラーエコノミー",
     "creator": "野田由美子 著・文・その他",
@@ -3766,12 +3724,6 @@
       "46変形"
     ],
     "language": "jpn"
-  },
-  {
-    "isbn": "9784344044135",
-    "errors": [
-      "No record data found"
-    ]
   },
   {
     "isbn": "9784344044142",
@@ -5806,12 +5758,6 @@
     "language": "jpn"
   },
   {
-    "isbn": "9784539730263",
-    "errors": [
-      "No record data found"
-    ]
-  },
-  {
     "isbn": "9784560072585",
     "title": "ピンポン",
     "creator": "パク・ミンギュ 著・文・その他",
@@ -7749,12 +7695,6 @@
     "language": "jpn"
   },
   {
-    "isbn": "9784775201503",
-    "errors": [
-      "No record data found"
-    ]
-  },
-  {
     "isbn": "9784775322055",
     "title": "戦国時代に宇宙要塞でやって来ました。10",
     "creator": "横蛍 著・文・その他",
@@ -8576,12 +8516,6 @@
       "B5変形"
     ],
     "language": "jpn"
-  },
-  {
-    "isbn": "9784802614993",
-    "errors": [
-      "No record data found"
-    ]
   },
   {
     "isbn": "9784803020816",
@@ -10760,12 +10694,6 @@
     "language": "jpn"
   },
   {
-    "isbn": "9784866578347",
-    "errors": [
-      "No record data found"
-    ]
-  },
-  {
     "isbn": "9784866578408",
     "title": "天官賜福 4",
     "creator": "墨香銅臭 著・文・その他",
@@ -11041,18 +10969,6 @@
       "芸術"
     ],
     "language": "jpn"
-  },
-  {
-    "isbn": "9784867424674",
-    "errors": [
-      "No record data found"
-    ]
-  },
-  {
-    "isbn": "9784867424698",
-    "errors": [
-      "No record data found"
-    ]
   },
   {
     "isbn": "9784867424735",
@@ -11551,12 +11467,6 @@
       "菊"
     ],
     "language": "jpn"
-  },
-  {
-    "isbn": "9784875025764",
-    "errors": [
-      "No record data found"
-    ]
   },
   {
     "isbn": "9784875867173",

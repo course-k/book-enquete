@@ -8,54 +8,120 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
-export const createTodo = /* GraphQL */ `mutation CreateTodo(
-  $input: CreateTodoInput!
-  $condition: ModelTodoConditionInput
+export const createBook = /* GraphQL */ `mutation CreateBook(
+  $input: CreateBookInput!
+  $condition: ModelBookConditionInput
 ) {
-  createTodo(input: $input, condition: $condition) {
-    id
-    name
+  createBook(input: $input, condition: $condition) {
+    isbn
+    title
+    creator
+    publisher
     description
+    language
+    votes
     createdAt
     updatedAt
+    id
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateTodoMutationVariables,
-  APITypes.CreateTodoMutation
+  APITypes.CreateBookMutationVariables,
+  APITypes.CreateBookMutation
 >;
-export const updateTodo = /* GraphQL */ `mutation UpdateTodo(
-  $input: UpdateTodoInput!
-  $condition: ModelTodoConditionInput
+export const updateBook = /* GraphQL */ `mutation UpdateBook(
+  $input: UpdateBookInput!
+  $condition: ModelBookConditionInput
 ) {
-  updateTodo(input: $input, condition: $condition) {
-    id
-    name
+  updateBook(input: $input, condition: $condition) {
+    isbn
+    title
+    creator
+    publisher
     description
+    language
+    votes
     createdAt
     updatedAt
+    id
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateTodoMutationVariables,
-  APITypes.UpdateTodoMutation
+  APITypes.UpdateBookMutationVariables,
+  APITypes.UpdateBookMutation
 >;
-export const deleteTodo = /* GraphQL */ `mutation DeleteTodo(
-  $input: DeleteTodoInput!
-  $condition: ModelTodoConditionInput
+export const deleteBook = /* GraphQL */ `mutation DeleteBook(
+  $input: DeleteBookInput!
+  $condition: ModelBookConditionInput
 ) {
-  deleteTodo(input: $input, condition: $condition) {
-    id
-    name
+  deleteBook(input: $input, condition: $condition) {
+    isbn
+    title
+    creator
+    publisher
     description
+    language
+    votes
+    createdAt
+    updatedAt
+    id
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteBookMutationVariables,
+  APITypes.DeleteBookMutation
+>;
+export const createVote = /* GraphQL */ `mutation CreateVote(
+  $input: CreateVoteInput!
+  $condition: ModelVoteConditionInput
+) {
+  createVote(input: $input, condition: $condition) {
+    id
+    bookIsbn
+    timestamp
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteTodoMutationVariables,
-  APITypes.DeleteTodoMutation
+  APITypes.CreateVoteMutationVariables,
+  APITypes.CreateVoteMutation
+>;
+export const updateVote = /* GraphQL */ `mutation UpdateVote(
+  $input: UpdateVoteInput!
+  $condition: ModelVoteConditionInput
+) {
+  updateVote(input: $input, condition: $condition) {
+    id
+    bookIsbn
+    timestamp
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateVoteMutationVariables,
+  APITypes.UpdateVoteMutation
+>;
+export const deleteVote = /* GraphQL */ `mutation DeleteVote(
+  $input: DeleteVoteInput!
+  $condition: ModelVoteConditionInput
+) {
+  deleteVote(input: $input, condition: $condition) {
+    id
+    bookIsbn
+    timestamp
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteVoteMutationVariables,
+  APITypes.DeleteVoteMutation
 >;

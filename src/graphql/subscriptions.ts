@@ -8,45 +8,102 @@ type GeneratedSubscription<InputType, OutputType> = string & {
   __generatedSubscriptionOutput: OutputType;
 };
 
-export const onCreateTodo = /* GraphQL */ `subscription OnCreateTodo($filter: ModelSubscriptionTodoFilterInput) {
-  onCreateTodo(filter: $filter) {
-    id
-    name
+export const onCreateBook = /* GraphQL */ `subscription OnCreateBook($filter: ModelSubscriptionBookFilterInput) {
+  onCreateBook(filter: $filter) {
+    isbn
+    title
+    creator
+    publisher
     description
+    language
+    votes
     createdAt
     updatedAt
+    id
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnCreateTodoSubscriptionVariables,
-  APITypes.OnCreateTodoSubscription
+  APITypes.OnCreateBookSubscriptionVariables,
+  APITypes.OnCreateBookSubscription
 >;
-export const onUpdateTodo = /* GraphQL */ `subscription OnUpdateTodo($filter: ModelSubscriptionTodoFilterInput) {
-  onUpdateTodo(filter: $filter) {
-    id
-    name
+export const onUpdateBook = /* GraphQL */ `subscription OnUpdateBook($filter: ModelSubscriptionBookFilterInput) {
+  onUpdateBook(filter: $filter) {
+    isbn
+    title
+    creator
+    publisher
     description
+    language
+    votes
     createdAt
     updatedAt
+    id
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnUpdateTodoSubscriptionVariables,
-  APITypes.OnUpdateTodoSubscription
+  APITypes.OnUpdateBookSubscriptionVariables,
+  APITypes.OnUpdateBookSubscription
 >;
-export const onDeleteTodo = /* GraphQL */ `subscription OnDeleteTodo($filter: ModelSubscriptionTodoFilterInput) {
-  onDeleteTodo(filter: $filter) {
-    id
-    name
+export const onDeleteBook = /* GraphQL */ `subscription OnDeleteBook($filter: ModelSubscriptionBookFilterInput) {
+  onDeleteBook(filter: $filter) {
+    isbn
+    title
+    creator
+    publisher
     description
+    language
+    votes
+    createdAt
+    updatedAt
+    id
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteBookSubscriptionVariables,
+  APITypes.OnDeleteBookSubscription
+>;
+export const onCreateVote = /* GraphQL */ `subscription OnCreateVote($filter: ModelSubscriptionVoteFilterInput) {
+  onCreateVote(filter: $filter) {
+    id
+    bookIsbn
+    timestamp
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnDeleteTodoSubscriptionVariables,
-  APITypes.OnDeleteTodoSubscription
+  APITypes.OnCreateVoteSubscriptionVariables,
+  APITypes.OnCreateVoteSubscription
+>;
+export const onUpdateVote = /* GraphQL */ `subscription OnUpdateVote($filter: ModelSubscriptionVoteFilterInput) {
+  onUpdateVote(filter: $filter) {
+    id
+    bookIsbn
+    timestamp
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateVoteSubscriptionVariables,
+  APITypes.OnUpdateVoteSubscription
+>;
+export const onDeleteVote = /* GraphQL */ `subscription OnDeleteVote($filter: ModelSubscriptionVoteFilterInput) {
+  onDeleteVote(filter: $filter) {
+    id
+    bookIsbn
+    timestamp
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteVoteSubscriptionVariables,
+  APITypes.OnDeleteVoteSubscription
 >;

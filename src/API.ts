@@ -2,23 +2,35 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateTodoInput = {
+export type CreateBookInput = {
+  isbn: string,
+  title: string,
+  creator: string,
+  publisher: string,
+  description: Array< string | null >,
+  language: string,
+  votes?: number | null,
+  createdAt?: string | null,
+  updatedAt?: string | null,
   id?: string | null,
-  name: string,
-  description?: string | null,
 };
 
-export type ModelTodoConditionInput = {
-  name?: ModelStringInput | null,
+export type ModelBookConditionInput = {
+  isbn?: ModelIDInput | null,
+  title?: ModelStringInput | null,
+  creator?: ModelStringInput | null,
+  publisher?: ModelStringInput | null,
   description?: ModelStringInput | null,
-  and?: Array< ModelTodoConditionInput | null > | null,
-  or?: Array< ModelTodoConditionInput | null > | null,
-  not?: ModelTodoConditionInput | null,
+  language?: ModelStringInput | null,
+  votes?: ModelIntInput | null,
   createdAt?: ModelStringInput | null,
   updatedAt?: ModelStringInput | null,
+  and?: Array< ModelBookConditionInput | null > | null,
+  or?: Array< ModelBookConditionInput | null > | null,
+  not?: ModelBookConditionInput | null,
 };
 
-export type ModelStringInput = {
+export type ModelIDInput = {
   ne?: string | null,
   eq?: string | null,
   le?: string | null,
@@ -58,37 +70,7 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type Todo = {
-  __typename: "Todo",
-  id: string,
-  name: string,
-  description?: string | null,
-  createdAt: string,
-  updatedAt: string,
-};
-
-export type UpdateTodoInput = {
-  id: string,
-  name?: string | null,
-  description?: string | null,
-};
-
-export type DeleteTodoInput = {
-  id: string,
-};
-
-export type ModelTodoFilterInput = {
-  id?: ModelIDInput | null,
-  name?: ModelStringInput | null,
-  description?: ModelStringInput | null,
-  createdAt?: ModelStringInput | null,
-  updatedAt?: ModelStringInput | null,
-  and?: Array< ModelTodoFilterInput | null > | null,
-  or?: Array< ModelTodoFilterInput | null > | null,
-  not?: ModelTodoFilterInput | null,
-};
-
-export type ModelIDInput = {
+export type ModelStringInput = {
   ne?: string | null,
   eq?: string | null,
   le?: string | null,
@@ -104,20 +86,136 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
-export type ModelTodoConnection = {
-  __typename: "ModelTodoConnection",
-  items:  Array<Todo | null >,
+export type ModelIntInput = {
+  ne?: number | null,
+  eq?: number | null,
+  le?: number | null,
+  lt?: number | null,
+  ge?: number | null,
+  gt?: number | null,
+  between?: Array< number | null > | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+};
+
+export type Book = {
+  __typename: "Book",
+  isbn: string,
+  title: string,
+  creator: string,
+  publisher: string,
+  description: Array< string | null >,
+  language: string,
+  votes?: number | null,
+  createdAt?: string | null,
+  updatedAt?: string | null,
+  id: string,
+};
+
+export type UpdateBookInput = {
+  isbn?: string | null,
+  title?: string | null,
+  creator?: string | null,
+  publisher?: string | null,
+  description?: Array< string | null > | null,
+  language?: string | null,
+  votes?: number | null,
+  createdAt?: string | null,
+  updatedAt?: string | null,
+  id: string,
+};
+
+export type DeleteBookInput = {
+  id: string,
+};
+
+export type CreateVoteInput = {
+  id?: string | null,
+  bookIsbn: string,
+  timestamp: string,
+};
+
+export type ModelVoteConditionInput = {
+  bookIsbn?: ModelStringInput | null,
+  timestamp?: ModelStringInput | null,
+  and?: Array< ModelVoteConditionInput | null > | null,
+  or?: Array< ModelVoteConditionInput | null > | null,
+  not?: ModelVoteConditionInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+};
+
+export type Vote = {
+  __typename: "Vote",
+  id: string,
+  bookIsbn: string,
+  timestamp: string,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type UpdateVoteInput = {
+  id: string,
+  bookIsbn?: string | null,
+  timestamp?: string | null,
+};
+
+export type DeleteVoteInput = {
+  id: string,
+};
+
+export type ModelBookFilterInput = {
+  isbn?: ModelIDInput | null,
+  title?: ModelStringInput | null,
+  creator?: ModelStringInput | null,
+  publisher?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  language?: ModelStringInput | null,
+  votes?: ModelIntInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+  id?: ModelIDInput | null,
+  and?: Array< ModelBookFilterInput | null > | null,
+  or?: Array< ModelBookFilterInput | null > | null,
+  not?: ModelBookFilterInput | null,
+};
+
+export type ModelBookConnection = {
+  __typename: "ModelBookConnection",
+  items:  Array<Book | null >,
   nextToken?: string | null,
 };
 
-export type ModelSubscriptionTodoFilterInput = {
-  id?: ModelSubscriptionIDInput | null,
-  name?: ModelSubscriptionStringInput | null,
+export type ModelVoteFilterInput = {
+  id?: ModelIDInput | null,
+  bookIsbn?: ModelStringInput | null,
+  timestamp?: ModelStringInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+  and?: Array< ModelVoteFilterInput | null > | null,
+  or?: Array< ModelVoteFilterInput | null > | null,
+  not?: ModelVoteFilterInput | null,
+};
+
+export type ModelVoteConnection = {
+  __typename: "ModelVoteConnection",
+  items:  Array<Vote | null >,
+  nextToken?: string | null,
+};
+
+export type ModelSubscriptionBookFilterInput = {
+  isbn?: ModelSubscriptionIDInput | null,
+  title?: ModelSubscriptionStringInput | null,
+  creator?: ModelSubscriptionStringInput | null,
+  publisher?: ModelSubscriptionStringInput | null,
   description?: ModelSubscriptionStringInput | null,
+  language?: ModelSubscriptionStringInput | null,
+  votes?: ModelSubscriptionIntInput | null,
   createdAt?: ModelSubscriptionStringInput | null,
   updatedAt?: ModelSubscriptionStringInput | null,
-  and?: Array< ModelSubscriptionTodoFilterInput | null > | null,
-  or?: Array< ModelSubscriptionTodoFilterInput | null > | null,
+  id?: ModelSubscriptionIDInput | null,
+  and?: Array< ModelSubscriptionBookFilterInput | null > | null,
+  or?: Array< ModelSubscriptionBookFilterInput | null > | null,
 };
 
 export type ModelSubscriptionIDInput = {
@@ -150,83 +248,234 @@ export type ModelSubscriptionStringInput = {
   notIn?: Array< string | null > | null,
 };
 
-export type CreateTodoMutationVariables = {
-  input: CreateTodoInput,
-  condition?: ModelTodoConditionInput | null,
+export type ModelSubscriptionIntInput = {
+  ne?: number | null,
+  eq?: number | null,
+  le?: number | null,
+  lt?: number | null,
+  ge?: number | null,
+  gt?: number | null,
+  between?: Array< number | null > | null,
+  in?: Array< number | null > | null,
+  notIn?: Array< number | null > | null,
 };
 
-export type CreateTodoMutation = {
-  createTodo?:  {
-    __typename: "Todo",
+export type ModelSubscriptionVoteFilterInput = {
+  id?: ModelSubscriptionIDInput | null,
+  bookIsbn?: ModelSubscriptionStringInput | null,
+  timestamp?: ModelSubscriptionStringInput | null,
+  createdAt?: ModelSubscriptionStringInput | null,
+  updatedAt?: ModelSubscriptionStringInput | null,
+  and?: Array< ModelSubscriptionVoteFilterInput | null > | null,
+  or?: Array< ModelSubscriptionVoteFilterInput | null > | null,
+};
+
+export type CreateBookMutationVariables = {
+  input: CreateBookInput,
+  condition?: ModelBookConditionInput | null,
+};
+
+export type CreateBookMutation = {
+  createBook?:  {
+    __typename: "Book",
+    isbn: string,
+    title: string,
+    creator: string,
+    publisher: string,
+    description: Array< string | null >,
+    language: string,
+    votes?: number | null,
+    createdAt?: string | null,
+    updatedAt?: string | null,
     id: string,
-    name: string,
-    description?: string | null,
+  } | null,
+};
+
+export type UpdateBookMutationVariables = {
+  input: UpdateBookInput,
+  condition?: ModelBookConditionInput | null,
+};
+
+export type UpdateBookMutation = {
+  updateBook?:  {
+    __typename: "Book",
+    isbn: string,
+    title: string,
+    creator: string,
+    publisher: string,
+    description: Array< string | null >,
+    language: string,
+    votes?: number | null,
+    createdAt?: string | null,
+    updatedAt?: string | null,
+    id: string,
+  } | null,
+};
+
+export type DeleteBookMutationVariables = {
+  input: DeleteBookInput,
+  condition?: ModelBookConditionInput | null,
+};
+
+export type DeleteBookMutation = {
+  deleteBook?:  {
+    __typename: "Book",
+    isbn: string,
+    title: string,
+    creator: string,
+    publisher: string,
+    description: Array< string | null >,
+    language: string,
+    votes?: number | null,
+    createdAt?: string | null,
+    updatedAt?: string | null,
+    id: string,
+  } | null,
+};
+
+export type CreateVoteMutationVariables = {
+  input: CreateVoteInput,
+  condition?: ModelVoteConditionInput | null,
+};
+
+export type CreateVoteMutation = {
+  createVote?:  {
+    __typename: "Vote",
+    id: string,
+    bookIsbn: string,
+    timestamp: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type UpdateTodoMutationVariables = {
-  input: UpdateTodoInput,
-  condition?: ModelTodoConditionInput | null,
+export type UpdateVoteMutationVariables = {
+  input: UpdateVoteInput,
+  condition?: ModelVoteConditionInput | null,
 };
 
-export type UpdateTodoMutation = {
-  updateTodo?:  {
-    __typename: "Todo",
+export type UpdateVoteMutation = {
+  updateVote?:  {
+    __typename: "Vote",
     id: string,
-    name: string,
-    description?: string | null,
+    bookIsbn: string,
+    timestamp: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type DeleteTodoMutationVariables = {
-  input: DeleteTodoInput,
-  condition?: ModelTodoConditionInput | null,
+export type DeleteVoteMutationVariables = {
+  input: DeleteVoteInput,
+  condition?: ModelVoteConditionInput | null,
 };
 
-export type DeleteTodoMutation = {
-  deleteTodo?:  {
-    __typename: "Todo",
+export type DeleteVoteMutation = {
+  deleteVote?:  {
+    __typename: "Vote",
     id: string,
-    name: string,
-    description?: string | null,
+    bookIsbn: string,
+    timestamp: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type GetTodoQueryVariables = {
+export type GetBooksByVotesQueryVariables = {
+  limit?: number | null,
+};
+
+export type GetBooksByVotesQuery = {
+  getBooksByVotes?:  Array< {
+    __typename: "Book",
+    isbn: string,
+    title: string,
+    creator: string,
+    publisher: string,
+    description: Array< string | null >,
+    language: string,
+    votes?: number | null,
+    createdAt?: string | null,
+    updatedAt?: string | null,
+    id: string,
+  } | null > | null,
+};
+
+export type GetBookQueryVariables = {
   id: string,
 };
 
-export type GetTodoQuery = {
-  getTodo?:  {
-    __typename: "Todo",
+export type GetBookQuery = {
+  getBook?:  {
+    __typename: "Book",
+    isbn: string,
+    title: string,
+    creator: string,
+    publisher: string,
+    description: Array< string | null >,
+    language: string,
+    votes?: number | null,
+    createdAt?: string | null,
+    updatedAt?: string | null,
     id: string,
-    name: string,
-    description?: string | null,
-    createdAt: string,
-    updatedAt: string,
   } | null,
 };
 
-export type ListTodosQueryVariables = {
-  filter?: ModelTodoFilterInput | null,
+export type ListBooksQueryVariables = {
+  filter?: ModelBookFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
-export type ListTodosQuery = {
-  listTodos?:  {
-    __typename: "ModelTodoConnection",
+export type ListBooksQuery = {
+  listBooks?:  {
+    __typename: "ModelBookConnection",
     items:  Array< {
-      __typename: "Todo",
+      __typename: "Book",
+      isbn: string,
+      title: string,
+      creator: string,
+      publisher: string,
+      description: Array< string | null >,
+      language: string,
+      votes?: number | null,
+      createdAt?: string | null,
+      updatedAt?: string | null,
       id: string,
-      name: string,
-      description?: string | null,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type GetVoteQueryVariables = {
+  id: string,
+};
+
+export type GetVoteQuery = {
+  getVote?:  {
+    __typename: "Vote",
+    id: string,
+    bookIsbn: string,
+    timestamp: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListVotesQueryVariables = {
+  filter?: ModelVoteFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListVotesQuery = {
+  listVotes?:  {
+    __typename: "ModelVoteConnection",
+    items:  Array< {
+      __typename: "Vote",
+      id: string,
+      bookIsbn: string,
+      timestamp: string,
       createdAt: string,
       updatedAt: string,
     } | null >,
@@ -234,46 +483,106 @@ export type ListTodosQuery = {
   } | null,
 };
 
-export type OnCreateTodoSubscriptionVariables = {
-  filter?: ModelSubscriptionTodoFilterInput | null,
+export type OnCreateBookSubscriptionVariables = {
+  filter?: ModelSubscriptionBookFilterInput | null,
 };
 
-export type OnCreateTodoSubscription = {
-  onCreateTodo?:  {
-    __typename: "Todo",
+export type OnCreateBookSubscription = {
+  onCreateBook?:  {
+    __typename: "Book",
+    isbn: string,
+    title: string,
+    creator: string,
+    publisher: string,
+    description: Array< string | null >,
+    language: string,
+    votes?: number | null,
+    createdAt?: string | null,
+    updatedAt?: string | null,
     id: string,
-    name: string,
-    description?: string | null,
+  } | null,
+};
+
+export type OnUpdateBookSubscriptionVariables = {
+  filter?: ModelSubscriptionBookFilterInput | null,
+};
+
+export type OnUpdateBookSubscription = {
+  onUpdateBook?:  {
+    __typename: "Book",
+    isbn: string,
+    title: string,
+    creator: string,
+    publisher: string,
+    description: Array< string | null >,
+    language: string,
+    votes?: number | null,
+    createdAt?: string | null,
+    updatedAt?: string | null,
+    id: string,
+  } | null,
+};
+
+export type OnDeleteBookSubscriptionVariables = {
+  filter?: ModelSubscriptionBookFilterInput | null,
+};
+
+export type OnDeleteBookSubscription = {
+  onDeleteBook?:  {
+    __typename: "Book",
+    isbn: string,
+    title: string,
+    creator: string,
+    publisher: string,
+    description: Array< string | null >,
+    language: string,
+    votes?: number | null,
+    createdAt?: string | null,
+    updatedAt?: string | null,
+    id: string,
+  } | null,
+};
+
+export type OnCreateVoteSubscriptionVariables = {
+  filter?: ModelSubscriptionVoteFilterInput | null,
+};
+
+export type OnCreateVoteSubscription = {
+  onCreateVote?:  {
+    __typename: "Vote",
+    id: string,
+    bookIsbn: string,
+    timestamp: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnUpdateTodoSubscriptionVariables = {
-  filter?: ModelSubscriptionTodoFilterInput | null,
+export type OnUpdateVoteSubscriptionVariables = {
+  filter?: ModelSubscriptionVoteFilterInput | null,
 };
 
-export type OnUpdateTodoSubscription = {
-  onUpdateTodo?:  {
-    __typename: "Todo",
+export type OnUpdateVoteSubscription = {
+  onUpdateVote?:  {
+    __typename: "Vote",
     id: string,
-    name: string,
-    description?: string | null,
+    bookIsbn: string,
+    timestamp: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnDeleteTodoSubscriptionVariables = {
-  filter?: ModelSubscriptionTodoFilterInput | null,
+export type OnDeleteVoteSubscriptionVariables = {
+  filter?: ModelSubscriptionVoteFilterInput | null,
 };
 
-export type OnDeleteTodoSubscription = {
-  onDeleteTodo?:  {
-    __typename: "Todo",
+export type OnDeleteVoteSubscription = {
+  onDeleteVote?:  {
+    __typename: "Vote",
     id: string,
-    name: string,
-    description?: string | null,
+    bookIsbn: string,
+    timestamp: string,
     createdAt: string,
     updatedAt: string,
   } | null,
