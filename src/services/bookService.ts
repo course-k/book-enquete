@@ -1,11 +1,15 @@
 // src/services/bookService.ts
 import { generateClient } from "aws-amplify/api";
+import awsconfig from '../aws-exports'
 import {
   Book,
   ListBooksResponse,
   GetBookResponse,
   graphqlOperations,
 } from "../types/book";
+import { Amplify } from "aws-amplify";
+
+Amplify.configure(awsconfig);
 
 const client = generateClient();
 
