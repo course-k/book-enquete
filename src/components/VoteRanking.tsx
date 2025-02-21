@@ -10,6 +10,7 @@ interface VoteRankingProps {
 function VoteRanking({ books, loading }: VoteRankingProps) {
   const topBooks = [...books]
     .sort((a, b) => (b.votes || 0) - (a.votes || 0))
+    .filter((v) => v.votes > 0)
     .slice(0, 3);
 
   return (
