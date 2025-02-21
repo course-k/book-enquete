@@ -1,6 +1,6 @@
 // src/services/bookService.ts
 import { generateClient } from "aws-amplify/api";
-import awsconfig from '../aws-exports'
+import awsconfig from "../aws-exports";
 import {
   Book,
   ListBooksResponse,
@@ -16,11 +16,23 @@ const client = generateClient();
 export class BookService {
   static async listBooks(): Promise<Book[]> {
     try {
-      const response = (await client.graphql({
-        query: graphqlOperations.listBooks,
-      })) as ListBooksResponse;
+      let allBooks: Book[] = [];
+      let nextToken: string | null | undefined = null;
 
-      return response.data.listBooks.items;
+      do {
+        const response = (await client.graphql({
+          query: graphqlOperations.listBooks,
+          variables: {
+            limit: 100, // 1回のリクエストで取得する最大件数
+            nextToken: nextToken,
+          },
+        })) as ListBooksResponse;
+
+        allBooks = [...allBooks, ...response.data.listBooks.items];
+        nextToken = response.data.listBooks.nextToken;
+      } while (nextToken);
+
+      return allBooks;
     } catch (error) {
       console.error("Error fetching books:", error);
       throw error;

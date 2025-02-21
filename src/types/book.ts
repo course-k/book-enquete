@@ -57,23 +57,23 @@ export interface CreateVoteResponse {
 // GraphQL Mutations/Queries/Subscriptions
 export const graphqlOperations = {
   listBooks: `
-      query ListBooks {
-        listBooks {
-          items {
-            isbn
-            title
-            creator
-            publisher
-            description
-            language
-            votes
-            createdAt
-            updatedAt
-          }
-          nextToken
-        }
+  query ListBooks($limit: Int, $nextToken: String) {
+    listBooks(limit: $limit, nextToken: $nextToken) {
+      items {
+        isbn
+        title
+        creator
+        publisher
+        description
+        language
+        votes
+        createdAt
+        updatedAt
       }
-    `,
+      nextToken
+    }
+  }
+`,
 
   getBook: `
       query GetBook($isbn: ID!) {
