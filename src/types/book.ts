@@ -76,8 +76,8 @@ export const graphqlOperations = {
 `,
 
   getBook: `
-      query GetBook($isbn: ID!) {
-        getBook(isbn: $isbn) {
+      query GetBook($id: ID!) {
+        getBook(id: $id) {
           isbn
           title
           creator
