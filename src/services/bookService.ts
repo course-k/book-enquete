@@ -43,7 +43,7 @@ export class BookService {
     try {
       const response = (await client.graphql({
         query: graphqlOperations.getBook,
-        variables: { id:isbn },
+        variables: { id: isbn },
       })) as GetBookResponse;
 
       return response.data.getBook;
@@ -72,7 +72,7 @@ export class BookService {
         query: graphqlOperations.updateBook,
         variables: {
           input: {
-            isbn,
+            id: isbn,
             votes: (book.votes || 0) + 1,
           },
         },
